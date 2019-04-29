@@ -1,17 +1,19 @@
 package com.intern.controller;
 
-import java.security.Principal;
 import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.intern.Model.Attendence;
+import com.intern.Model.AttendenceStatus;
 import com.intern.Service.AttendenceService;
 
 @Controller
@@ -25,11 +27,14 @@ public class AttendanceController {
 		return "admin/attendence/attendencesheet";
 	}
 
-	@PostMapping({ "/Admin/Attendence/Add", "/User/Attendence/Add" })
-	public String updateAttendence(@RequestParam("date") Date date, @RequestParam("reason") String reason) {
-
-		Attendence attendence = new Attendence(date, reason);
-		attendenceService.addAttendence(attendence);
+	@PostMapping(value= { "/Admin/Attendence/Add", "/User/Attendence/Add"},
+			consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+	public String addAttendence(@RequestBody AttendenceStatus attendence) {
+//@RequestParam("date") Date date, @RequestParam("reason") String reason,
+		System.out.println("**************************");
+		System.out.println(attendence);
+		//Attendence attendence = new Attendence(new Date(0), "");
+		//attendenceService.addAttendence(attendence);
 
 		return "redirect:/Admin/Student/Display";
 	}
@@ -60,7 +65,7 @@ public class AttendanceController {
 	@GetMapping({ "/Admin/Attendence/Delete", "/User/Attendence/Delete" })
 	public String deleteAttendence(@PathVariable("id") int id) {
 		Attendence attendence = new Attendence();
-		attendence.setId(id);
+	//	attendence.setId(id);
 		attendenceService.deleteAttendence(id);
 		return "redirect:/User/Attendence/Display";
 
@@ -78,8 +83,8 @@ public class AttendanceController {
 	public String updateAttendence(@RequestParam("id") int id, @RequestParam("date") Date date,
 			@RequestParam("reason") String reason) {
 
-		Attendence attendence = new Attendence(id, date, reason);
-		attendenceService.updateAttendence(attendence);
+		//Attendence attendence = new Attendence(id, date, reason);
+	//	attendenceService.updateAttendence(attendence);
 
 		return "redirect:/Admin/Student/Display";
 

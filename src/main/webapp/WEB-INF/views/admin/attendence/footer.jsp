@@ -1,58 +1,78 @@
 
 
 
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
-  </footer>
+<!-- /.content-wrapper -->
+<footer class="main-footer">
+	<div class="pull-right hidden-xs">
+		<b>Version</b> 2.4.0
+	</div>
+	<strong>Copyright &copy; 2014-2016 <a
+		href="https://adminlte.io">Almsaeed Studio</a>.
+	</strong> All rights reserved.
+</footer>
 
- </div>
+</div>
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="${pageContext.request.contextPath}/resources/bower_components/jquery/dist/jquery.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="${pageContext.request.contextPath}/resources/bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
-<script src="${pageContext.request.contextPath}/resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
-<script src="${pageContext.request.contextPath}/resources/bower_components/raphael/raphael.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/bower_components/morris.js/morris.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/bower_components/raphael/raphael.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/bower_components/morris.js/morris.min.js"></script>
 <!-- Sparkline -->
-<script src="${pageContext.request.contextPath}/resources/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
-<script src="${pageContext.request.contextPath}/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 <!-- jQuery Knob Chart -->
-<script src="${pageContext.request.contextPath}/resources/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
-<script src="${pageContext.request.contextPath}/resources/bower_components/moment/min/moment.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/bower_components/moment/min/moment.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
-<script src="${pageContext.request.contextPath}/resources/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
-<script src="${pageContext.request.contextPath}/resources/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="${pageContext.request.contextPath}/resources/bower_components/fastclick/lib/fastclick.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="${pageContext.request.contextPath}/resources/dist/js/adminlte.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="${pageContext.request.contextPath}/resources/dist/js/pages/dashboard.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="${pageContext.request.contextPath}/resources/dist/js/demo.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/dist/js/demo.js"></script>
 <!-- fullCalendar -->
 <script src="/resources/bower_components/moment/moment.js"></script>
-<script src="/resources/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+<script
+	src="/resources/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
 <!-- Page specific script -->
 <script>
   $(function () {
@@ -162,12 +182,13 @@
 
         // retrieve the dropped element's stored Event Object
         var originalEventObject = $(this).data('eventObject')
+        console.log(originalEventObject);
 
         // we need to copy it, so that multiple events don't have a reference to the same object
         var copiedEventObject = $.extend({}, originalEventObject)
 
         // assign it the date that was reported
-        copiedEventObject.start           = date
+       // copiedEventObject.start           = date
         copiedEventObject.allDay          = allDay
         copiedEventObject.backgroundColor = $(this).css('background-color')
         copiedEventObject.borderColor     = $(this).css('border-color')
@@ -175,6 +196,23 @@
         // render the event on the calendar
         // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
         $('#calendar').fullCalendar('renderEvent', copiedEventObject, true)
+        
+        console.log(copiedEventObject);
+        var status="complete"
+        
+        $.ajax({
+        	url: "http://localhost:8080/Admin/Attendence/Add",
+        	dataType: "json",
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(copiedEventObject),
+            success: function (data) {
+                alert(data.d);
+            },
+            error: function (d) {
+                alert("error");
+            }
+    	});
 
         // is the "remove after drop" checkbox checked?
         if ($('#drop-remove').is(':checked')) {
